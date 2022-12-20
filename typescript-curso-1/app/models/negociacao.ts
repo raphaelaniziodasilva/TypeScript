@@ -1,10 +1,10 @@
 export class Negociacao {
-    // privando elementos para não deixar ngm ter acesso fora dessa classe
-    private _data;
-    private _quantidade;
-    private _valor;
+    // privando elementos para não deixar ninguém ter acesso fora dessa classe e fazendo a sua tipagem
+    private _data: Date;
+    private _quantidade: number;
+    private _valor: number;
 
-    constructor(data, quantidade, valor) {
+    constructor(data: Date, quantidade: number, valor :number) {
         this._data = data;
         this._quantidade = quantidade;
         this._valor = valor;

@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-        "outDir": "dist/js",
+        "outDir": "dist/js", // converter para javascript
         "target": "ES6",
-        "noEmitOnError": true
+        "noEmitOnError": true, // para não emitir erros
+        "noImplicitAny": true // ativando o typescript para ele não adotar o type any inplicitamente ou seja agente vai escolher as tipagens
     },
-    "include": ["app/**/*"]
+    "include": ["app/**/*"] // pegando todas as pastas e arquivos do app para poder converter em js
 }
