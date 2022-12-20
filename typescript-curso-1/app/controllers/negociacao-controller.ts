@@ -19,9 +19,12 @@ export class NegociacaoController {
     }
     // criando o metodo adicionar
     adiciona(): void {
-        // instanciando: criando uma negociação do metodo criaNegociacao
+        // criando uma negociação, para isso eu vou chamar o metodo criaNegociacao
         const negociacao = this.criaNegociacao();
-        console.log(negociacao)        
+        console.log(negociacao) // exibindo no console do navegador     
+        // limpando o formulario, para isso eu vou chamar o metodo limparFormulario
+        this.limparFormulario()
+
         // com o metodo adicionar funcionando vou la em app.ts criar: instanciar o NegociacaoController para usar o metodo adicionar
     }
     // criando metodo de negociação
@@ -42,7 +45,14 @@ export class NegociacaoController {
             quantidade,
             valor      
         );
-
+    }
+    // criando metodo para limpar formulario da pagina html
+    limparFormulario(): void {
+        this.inputData.value = ""
+        this.inputQuantidade.value = ""
+        this.inputValor.value = ""
+        // quando o formulario for limpado o foco vai ficar na data
+        this.inputData.focus()
     }
 
 
