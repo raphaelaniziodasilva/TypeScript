@@ -1,5 +1,6 @@
 // importando o controller de negociação
 import { NegociacaoController } from "./controllers/negociacao-controller.js";
+
 // instanciando: criando um controller
 const controller = new NegociacaoController;
 // para chamar o metodo adiciona do controller de negociação eu preciso pegar o formulario da pagina HTML 
