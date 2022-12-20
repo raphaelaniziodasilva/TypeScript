@@ -10,19 +10,21 @@ export class Negociacao {
         this._valor = valor;
     }
 
-    get data() {
+    // criando os metodo get para poder ter acesso aos elementos fora da classe
+    get data(): Date {
         return this._data;
     }
 
-    get quantidade() {
+    get quantidade(): number {
         return this._quantidade;
     }
 
-    get valor() {
+    get valor(): number {
         return this._valor;
     }
 
-    get volume() {
+    get volume(): number {
         return this._quantidade * this._valor;
     }
+    // com o model de negociação criado vamos criar o controler de negociaçao
 }
