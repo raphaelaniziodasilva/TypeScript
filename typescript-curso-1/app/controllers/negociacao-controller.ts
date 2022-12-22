@@ -54,7 +54,6 @@ export class NegociacaoController {
         // quando o formulario for limpado o foco vai ficar na data
         this.inputData.focus()
     }
-
-
-
 }
+
+// Agora vamos criar um novo arquivo na pasta models chamado de negociacoes e esse modelo vai encapsular uma lista de negociações atraves da instancia de negociações eu vou pedir para para adicionar e me trazer uma lista das negociações
