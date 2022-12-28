@@ -1,5 +1,6 @@
 // importando o modelo de negociação
 import { Negociacao } from "../models/negociacao.js";
+import { Negociacoes } from "../models/negociacoes.js";
 /* 
   O controller de negociação vai ser a ponte entre as interações do usuario na minha pagina e a criação de modelo ele vai ser o meio de campo vai ter uma depedencia de elementos de UI e vai fazer a comunicação disso no nosso modelo
   Vamos criar uma classe no controller de negociação, instancia e ela vai controlar a interação do form e quando for clicado em incluir no formulario vai pegar os dados que estão no formulario e vai criar um novo modelo 
@@ -10,6 +11,8 @@ export class NegociacaoController {
     private inputData: HTMLInputElement;
     private inputQuantidade: HTMLInputElement;
     private inputValor: HTMLInputElement;
+    // criando uma nova propriedade da classe de negociacoes e ja vamos inicalizar essa instancia: lista para começar vazia, e também vamos adicionar no metodo adicionar
+    private negociacoes = new Negociacoes(); // lista de negociações
 
     constructor() {
         // atribundo ao contrutor os inputs que estão na pagina HTML
@@ -21,7 +24,12 @@ export class NegociacaoController {
     adiciona(): void {
         // criando uma negociação, para isso eu vou chamar o metodo criaNegociacao
         const negociacao = this.criaNegociacao();
-        console.log(negociacao) // exibindo no console do navegador     
+        // criei uma negociação vou chamar o metodo adicionar para poder adicionar essa negociação dentro da lista de negociações
+        this.negociacoes.adiciona(negociacao);
+        // chamando o metodo lista para eu saber quantas negociações eu tenho dentro dessa lista
+        console.log(this.negociacoes.lista());
+        
+        //console.log(negociacao) // exibindo no console do navegador     
         // limpando o formulario, para isso eu vou chamar o metodo limparFormulario
         this.limparFormulario()
 
@@ -51,7 +59,7 @@ export class NegociacaoController {
         this.inputData.value = ""
         this.inputQuantidade.value = ""
         this.inputValor.value = ""
-        // quando o formulario for limpado o foco vai ficar na data
+        // quando o formulario for limpado o foco vai ficar na data ou seja o cursor vai parar no campo data
         this.inputData.focus()
     }
 }
